@@ -1,6 +1,6 @@
 # Mastering Angular Reactive Forms with Validation: Complete Guide
 
-Read more tutorial [here]().
+Read more tutorial [here](https://www.djamware.com/post/6853c4da7064f90646f6bd3a/mastering-angular-reactive-forms-with-validation-complete-guide).
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
 
