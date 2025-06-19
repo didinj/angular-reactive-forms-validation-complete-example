@@ -1,0 +1,68 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="email">Email:</label>
+  <input id="email" type="email" formControlName="email" />
+  <div *ngIf="email.invalid && (email.dirty || email.touched)">
+    <small *ngIf="email.errors?.['required']">Email is required.</small>
+    <small *ngIf="email.errors?.['email']">Invalid email address.</small>
+    <small *ngIf="loginForm.get('username')?.errors?.['usernameTaken']">
+      This username is already taken.
+    </small>
+  </div>
+
+  <label for="password">Password:</label>
+  <input id="password" type="password" formControlName="password" />
+  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+    <small *ngIf="password.errors?.['required']">Password is required.</small>
+    <small *ngIf="password.errors?.['minlength']">
+      Password must be at least {{ password.errors?.['minlength'].requiredLength }} characters.
+    </small>
+    <small *ngIf="password.errors?.['weakPassword']">
+      Password must contain an uppercase letter, number, and special character.
+    </small>
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Login</button>
+</form> -->
+
+<!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <label>Name:</label>
+  <input formControlName="name" />
+
+  <div formArrayName="phones">
+    <div *ngFor="let phone of phones.controls; let i = index" [formGroupName]="i">
+      <label>Phone {{ i + 1 }}:</label>
+      <input formControlName="number" />
+      <button type="button" (click)="removePhone(i)" *ngIf="phones.length > 1">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addPhone()">Add Phone</button>
+
+  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+</form> -->
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>Name:</label>
+  <input formControlName="name" />
+
+  <label>Email:</label>
+  <input formControlName="email" />
+
+  <div formGroupName="address">
+    <label>Street:</label>
+    <input formControlName="street" />
+
+    <label>City:</label>
+    <input formControlName="city" />
+
+    <label>ZIP:</label>
+    <input formControlName="zip" />
+  </div>
+
+  <button type="submit" [disabled]="profileForm.invalid || loading">
+    {{ loading ? 'Saving...' : 'Save' }}
+  </button>
+
+  <p *ngIf="formSubmitted">✅ Form submitted successfully!</p>
+</form>
+
